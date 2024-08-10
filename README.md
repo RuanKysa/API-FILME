@@ -1,36 +1,84 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Filmes Ruan App
 
-## Getting Started
+## Descrição
 
-First, run the development server:
+Este é um aplicativo de descoberta de filmes construído utilizando as seguintes tecnologias:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **React**: Para a construção de componentes de interface de usuário.
+- **Next.js**: Framework para React que oferece renderização do lado do servidor e geração de sites estáticos.
+- **TypeScript**: Linguagem que adiciona tipagem estática ao JavaScript, garantindo mais segurança e clareza no código.
+- **SCSS**: Um pre-processador CSS que permite o uso de variáveis, aninhamento de regras, mixins, herança e mais, facilitando a manutenção e escalabilidade dos estilos.
+- **API de Filmes**: Utilizamos a API do The Movie Database (TMDb) para buscar informações sobre filmes.
+
+## Funcionalidades
+
+- Exibição de uma lista de filmes obtidos através da API do TMDb.
+- Cada filme é exibido em um cartão com detalhes básicos.
+
+## Como rodar o projeto
+
+### Pré-requisitos
+
+Certifique-se de ter o Node.js instalado na sua máquina.
+
+### Instalação
+
+1. Clone o repositório:
+
+   ```bash
+   git clone https://github.com/seu-usuario/movie-discovery-app.git
+   ```
+
+2. Navegue até o diretório do projeto:
+
+   ```bash
+   cd movie-discovery-app
+   ```
+
+3. Instale as dependências:
+
+   ```bash
+   npm install
+   ```
+
+### Rodando o projeto
+
+1. Inicie o servidor de desenvolvimento:
+
+   ```bash
+   npm run dev
+   ```
+
+2. Abra o navegador e acesse `http://localhost:3000`.
+
+### Estrutura de Pastas
+
+- **`/pages`**: Contém as páginas da aplicação.
+- **`/components`**: Contém os componentes reutilizáveis da aplicação, como `Card` , `Lista` e `Estrela`.
+- **`/styles`**: Contém os arquivos de estilo em SCSS.
+
+### Configuração da API
+
+O projeto utiliza a API do The Movie Database (TMDb). Certifique-se de configurar sua chave de API corretamente no arquivo de código que faz a requisição:
+
+```typescript
+axios({
+    method: 'GET',
+    url: 'https://api.themoviedb.org/3/discover/movie',
+    params: {
+        api_key: 'e27d5a0815a0ef7d538fb2929fb0705b',
+        language: 'pt-BR'
+    }
+})
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Substitua `'e27d5a0815a0ef7d538fb2929fb0705b'` pela sua chave de API pessoal obtida no site do TMDb.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Contribuição
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Se você quiser contribuir com o projeto, sinta-se à vontade para abrir issues ou enviar pull requests.
 
-## Learn More
+## Licença
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Este projeto está licenciado sob a licença MIT.
+```

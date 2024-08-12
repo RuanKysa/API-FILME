@@ -66,7 +66,7 @@ axios({
     method: 'GET',
     url: 'https://api.themoviedb.org/3/discover/movie',
     params: {
-        api_key: 'e27d5a0815a0ef7d538fb2929fb0705b',
+        api_key: 'segurança',
         language: 'pt-BR'
     }
 })
